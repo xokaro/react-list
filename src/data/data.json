@@ -1,17 +1,51 @@
 [ 
     {
+        "id" : "0",
         "brand" : "Sony Pictures",
         "category" : "Movies",
-        "name" : "Underworld"
+        "name" : "Underworld",
+        "date": "2000-01-15"
     }, 
     {
+        "id" : "1",
         "brand" : "Sony Pictures",
         "category" : "Movies",
-        "name" : "Spiderman"
+        "name" : "Spiderman",
+        "date": "2003-07-15"
     }, 
     {
+        "id" : "2",
         "brand" : "Sony Pictures",
         "category" : "Movies",
-        "name" : "Resident Evil"
+        "name" : "Resident Evil",
+        "date": "2005-05-25"
+    },
+    {
+        "id" : "3",
+        "brand" : "New Line Cinema",
+        "category" : "Movies",
+        "name" : "The Disaster Artist",
+        "date": "2017-10-05"
+    }, 
+    {
+        "id" : "4",
+        "brand" : "20th Century Fox",
+        "category" : "Movies",
+        "name" : "Maze Runner",
+        "date": "2022-01-15"
+    },
+    {
+        "id" : "5",
+        "brand" : "20th Century Fox",
+        "category" : "Movies",
+        "name" : "9/11",
+        "date": "2008-11-11"
+    },
+    {
+        "id" : "6",
+        "brand" : "Świat Ksiązki",
+        "category" : "Books",
+        "name" : "Zapisane w wodzie",
+        "date": "2016-01-30"
     } 
 ]
