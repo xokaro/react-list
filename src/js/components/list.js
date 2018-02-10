@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
-const API_URL = 'https://react-list-2c16c.firebaseio.com/';
+import ListItem from './list_item';
 
 const List = (props) => {
     const listItem = props.items.map((item) => {
         return (
-            <ListItem item={item} key={item.id}/>
+            console.log(item)
         );
     });
 

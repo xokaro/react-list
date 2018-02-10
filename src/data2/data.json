@@ -47,5 +47,47 @@
         "category" : "Books",
         "name" : "Zapisane w wodzie",
         "date": "2016-01-30"
-    } 
+    },
+    {
+        "id" : "7",
+        "brand" : "Hanna-Barbera",
+        "category" : "Movies",
+        "name" : "Scooby Doo",
+        "date": "2012-10-03"
+    },
+    {
+        "id" : "8",
+        "brand" : "Wydawnictwo Znak",
+        "category" : "Books",
+        "name" : "Początek",
+        "date": "2018-01-30"
+    },
+    {
+        "id" : "9",
+        "brand" : "Wydawnictwo Znak",
+        "category" : "Books",
+        "name" : "Czarownica",
+        "date": "2015-08-30"
+    },
+    {
+        "id" : "10",
+        "brand" : "Wydawnictwo Amber",
+        "category" : "Books",
+        "name" : "Milczenie śniegu",
+        "date": "2018-02-22"
+    },
+    {
+        "id" : "11",
+        "brand" : "Wydawnictwo Amber",
+        "category" : "Books",
+        "name" : "Zakazana nauka",
+        "date": "2016-02-12"
+    },
+    {
+        "id" : "12",
+        "brand" : "Wydawnictwo Znak",
+        "category" : "Books",
+        "name" : "W domu",
+        "date": "2016-01-30"
+    }
 ]

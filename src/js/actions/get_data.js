@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import List from '../components/list';
 
-const API_URL = '';
+const API_URL = 'https://raw.githubusercontent.com/xokaro/react-list/master/src/data/data.json';
 
 class GetData extends Component {
     constructor(){
