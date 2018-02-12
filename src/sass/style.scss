@@ -1,0 +1,82 @@
+//page variables
+$font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+$page-background: #03C2B1;
+$header-color: #0F1E4A;
+
+
+body{
+    background: $page-background;
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+
+    .main-container{
+        @media (min-width: 1280px){
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        //filters and list containers
+        .filters-container,
+        .all-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        //single item styles 
+        .all-items__item{
+            flex: 0 0 100%;
+            background: #FFF;
+            margin: 10px 0;
+
+            .all-items__name{
+                text-align: center;
+                font-size: 30px;
+                font-weight: 600;
+                padding: 15px;
+                color: $header-color;
+                border-bottom: 1px solid #c0c0c0;
+            }
+
+            .all-items__details-container{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-wrap: wrap;
+                
+                .all-items__item-content{
+                    padding: 10px;
+                }
+
+                .all-items__brand--bolded{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        //filters container's items styles
+        .filters-container{
+            .filters-container__searchbar{
+                min-width: 330px;
+                height: 25px;
+                font-size: 14px;
+                padding: 5px;
+                margin: 10px;
+            }
+
+            .filters-container__categories,
+            .filters-container__brands{
+                height: 40px;
+                padding: 5px;
+                font-size: 14px;
+                margin-right: 10px;
+                margin-top: 10px;
+                background: #FFF;
+            }
+        }
+    }
+}

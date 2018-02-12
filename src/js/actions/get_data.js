@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import List from '../components/list';
+import App from '../app';
 
-const API_URL = 'https://raw.githubusercontent.com/xokaro/react-list/master/src/data/data.json';
+const API_URL = 'https://raw.githubusercontent.com/xokaro/react-list/master/src/data2/data.json';
 
 class GetData extends Component {
     constructor(){
@@ -34,7 +34,7 @@ class GetData extends Component {
 
     render(){
         return (
-            <List items={this.state.items} />
+            <App items={this.state.items} />
         )
     }
 }
