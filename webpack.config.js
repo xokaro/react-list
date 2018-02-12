@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const paths = {
-    DIST: path.resolve(__dirname, 'dist'),
+    DIST: path.resolve(__dirname, 'docs'),
     JS: path.resolve(__dirname, 'src/js'),
     SRC: path.resolve(__dirname, 'src'),
 };
