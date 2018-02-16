@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import '../sass/style.scss';
-import List from './components/list';
+import FilterContainer from './components/filter_container';
 
 const API_URL = 'https://raw.githubusercontent.com/xokaro/react-list/master/src/data2/data.json';
 
+/**
+ * @componentName App
+ * Main page component
+ */
 class App extends Component {
+    /**
+     * @param {array} items Will contain all items data.
+     * @param {boolean} isLoading Controls if the data is already rendered.
+     */
     constructor(){
         super();
 
         this.state = {
             items: [],
-            brands: [],
-            categories: [],
             isLoading: true
         }
     }
 
+    /**
+     * Fetch data from API.
+     * @param {string} API_URL Url with data.
+     */
     componentDidMount(){
         fetch(API_URL)
         .then(result => result.json())
@@ -25,8 +35,6 @@ class App extends Component {
                     this.setState({
                         items: data,
                         isLoading: false,
-                        brands: [...new Set(data.map(item => item.brand ))],
-                        categories: [...new Set(data.map(item => item.category ))]
                     })
                 },
                 error => {
@@ -39,10 +47,7 @@ class App extends Component {
 
     render(){
         return (
-            <List items={this.state.items} 
-                  brands={this.state.brands} 
-                  categories={this.state.categories}
-            />
+            <FilterContainer items={this.state.items} loading={this.state.isLoading} />
         )
     }
 }

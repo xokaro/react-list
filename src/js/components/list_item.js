@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * @componentName ListItem
+ * @description Creates single element content.
+ * @param {object} item Single item data.
+ */
 const ListItem = ({ item }) => {
 
     const name = item.name,
