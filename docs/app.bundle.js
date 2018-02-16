@@ -1012,9 +1012,18 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var API_URL = 'https://raw.githubusercontent.com/xokaro/react-list/master/src/data2/data.json';
 
+/**
+ * @componentName App
+ * Main page component
+ */
+
 var App = function (_Component) {
     _inherits(App, _Component);
 
+    /**
+     * @param {array} items Will contain all items data.
+     * @param {boolean} isLoading Controls if the data is already rendered.
+     */
     function App() {
         _classCallCheck(this, App);
 
@@ -1026,6 +1035,12 @@ var App = function (_Component) {
         };
         return _this;
     }
+
+    /**
+     * Fetch data from API.
+     * @param {string} API_URL Url with data.
+     */
+
 
     _createClass(App, [{
         key: 'componentDidMount',
@@ -1048,7 +1063,7 @@ var App = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_filter_container2.default, { items: this.state.items });
+            return _react2.default.createElement(_filter_container2.default, { items: this.state.items, loading: this.state.isLoading });
         }
     }]);
 
@@ -18378,7 +18393,7 @@ exports = module.exports = __webpack_require__(29)(false);
 
 
 // module
-exports.push([module.i, "body {\n  background: #03C2B1;\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\", \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\n  margin: 0;\n  padding: 0; }\n  @media (min-width: 1280px) {\n    body .main-container {\n      max-width: 1280px;\n      margin: 0 auto; } }\n  body .main-container .filters-container,\n  body .main-container .all-items {\n    display: flex;\n    justify-content: center;\n    flex-wrap: wrap;\n    list-style-type: none;\n    padding: 10px;\n    margin: 10px 0; }\n  body .main-container .all-items__item {\n    flex: 0 0 100%;\n    background: #FFF;\n    margin: 10px 0; }\n    body .main-container .all-items__item .all-items__name {\n      text-align: center;\n      font-size: 30px;\n      font-weight: 600;\n      padding: 15px;\n      color: #0F1E4A;\n      border-bottom: 1px solid #c0c0c0; }\n    body .main-container .all-items__item .all-items__details-container {\n      display: flex;\n      justify-content: center;\n      text-align: center;\n      flex-wrap: wrap; }\n      body .main-container .all-items__item .all-items__details-container .all-items__item-content {\n        padding: 10px; }\n      body .main-container .all-items__item .all-items__details-container .all-items__brand--bolded {\n        font-weight: 600; }\n  body .main-container .filters-container .filters-container__searchbar {\n    min-width: 330px;\n    height: 25px;\n    font-size: 14px;\n    padding: 5px;\n    margin: 10px; }\n  body .main-container .filters-container .filters-container__categories,\n  body .main-container .filters-container .filters-container__brands {\n    height: 40px;\n    padding: 5px;\n    font-size: 14px;\n    margin-right: 10px;\n    margin-top: 10px;\n    background: #FFF; }\n", ""]);
+exports.push([module.i, "body {\n  background: #03C2B1;\n  font-family: \"Lucida Sans\", \"Lucida Sans Regular\", \"Lucida Grande\", \"Lucida Sans Unicode\", Geneva, Verdana, sans-serif;\n  margin: 0;\n  padding: 0; }\n  @media (min-width: 1280px) {\n    body .main-container {\n      max-width: 1280px;\n      margin: 0 auto; } }\n  body .main-container .filters-container,\n  body .main-container .all-items {\n    display: flex;\n    justify-content: center;\n    flex-wrap: wrap;\n    list-style-type: none;\n    padding: 10px;\n    margin: 10px 0; }\n  body .main-container .no-item {\n    text-align: center;\n    font-size: 20px; }\n  body .main-container .loader {\n    width: 30px;\n    height: 30px;\n    margin: 0 auto;\n    border: 5px solid #808080;\n    border-radius: 50%;\n    border-top: 5px solid #fffcfc;\n    animation: spiner 1s linear infinite; }\n\n@keyframes spiner {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n  body .main-container .all-items__item {\n    flex: 0 0 100%;\n    background: #FFF;\n    margin: 10px 0; }\n    body .main-container .all-items__item .all-items__name {\n      text-align: center;\n      font-size: 30px;\n      font-weight: 600;\n      padding: 15px;\n      color: #0F1E4A;\n      border-bottom: 1px solid #c0c0c0; }\n    body .main-container .all-items__item .all-items__details-container {\n      display: flex;\n      justify-content: center;\n      text-align: center;\n      flex-wrap: wrap; }\n      body .main-container .all-items__item .all-items__details-container .all-items__item-content {\n        padding: 10px; }\n      body .main-container .all-items__item .all-items__details-container .all-items__brand--bolded {\n        font-weight: 600; }\n  body .main-container .filters-container .filters-container__searchbar {\n    min-width: 330px;\n    height: 25px;\n    font-size: 14px;\n    padding: 5px;\n    margin: 10px; }\n  body .main-container .filters-container .filters-container__categories,\n  body .main-container .filters-container .filters-container__brands {\n    height: 40px;\n    padding: 5px;\n    font-size: 14px;\n    margin-right: 10px;\n    margin-top: 10px;\n    background: #FFF; }\n", ""]);
 
 // exports
 
@@ -18981,79 +18996,97 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * @componentName FilterContainer
+ * @description Creates filters container and generates filtered list.
+ */
 var FilterContainer = function (_Component) {
     _inherits(FilterContainer, _Component);
 
-    function FilterContainer() {
+    /**
+     * @param {array} allItems Initialization of param which will hold items array 
+     */
+    function FilterContainer(props) {
         _classCallCheck(this, FilterContainer);
 
-        var _this = _possibleConstructorReturn(this, (FilterContainer.__proto__ || Object.getPrototypeOf(FilterContainer)).call(this));
+        var _this = _possibleConstructorReturn(this, (FilterContainer.__proto__ || Object.getPrototypeOf(FilterContainer)).call(this, props));
 
         _this.state = {
-            allItems: [],
-            searchbar: '',
-            brand: '',
-            category: ''
+            allItems: []
         };
         return _this;
     }
+
+    /**
+     * @param {array} props All props get from <App />
+     */
+
 
     _createClass(FilterContainer, [{
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(props) {
             this.setState({
-                allItems: this.props.items
+                allItems: props.items
             });
         }
 
-        // filterAllItems(val, searchingType) {
-        //     switch (searchingType){
-        //         case 'searchbar':
-        //             this.setState({
-        //                 searchbar: val
-        //             })
-        //             break;
-        //         case 'brand':
-        //             this.setState({
-        //                 brand: val
-        //             })
-        //             break;
-        //         case 'category':
-        //             this.setState({
-        //                 category: val
-        //             })
-        //             break;
-        //         default: 
-        //             break;
-        //     }
-        // }
+        /**
+         * Add value to filters types.
+         * @param {string} searchingType Contains chosen type of search ['name', 'brand', 'category'].
+         * @param {string} searchVal Contains value of chosen element/typed in data.
+         */
 
-
+    }, {
+        key: 'filterAllItems',
+        value: function filterAllItems(searchingType, searchVal) {
+            switch (searchingType) {
+                case 'name':
+                    this.setState({
+                        name: searchVal
+                    });
+                    break;
+                case 'brand':
+                    this.setState({
+                        brand: searchVal
+                    });
+                    break;
+                case 'category':
+                    this.setState({
+                        category: searchVal
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
     }, {
         key: 'render',
         value: function render() {
-            var arr = ['searchbar', 'brand', 'category'],
-                itemsArray = this.props.items,
-                state = this.state;
+            var _this2 = this;
 
-            arr.map(function (filter) {
-                var filterBy = state[filter];
+            var arr = ['name', 'brand', 'category'],
+                itemsArray = this.props.items;
 
-                if (filterBy && filterBy != 'searchbar') {
+            arr.map(function (filtered) {
+                var filterBy = _this2.state[filtered];
+
+                if (filterBy != undefined) {
                     itemsArray = itemsArray.filter(function (item) {
-                        return item[filter] === filterBy;
+                        return item[filtered].toLowerCase().indexOf(filterBy.toLowerCase()) !== -1;
                     });
-                } else if (filterBy == 'searchbar') {
-                    itemsArray = itemsArray.map(function (item) {
-                        return item.name.toLowerCase().indexOf(filterBy.toLowerCase()) !== -1;
-                    });
+                } else if ((_this2.state.name == '' || _this2.state.name == undefined) && (_this2.state.brand == 'Select brand' || _this2.state.brand == undefined) && (_this2.state.category == 'Select category' || _this2.state.category == undefined)) {
+                    itemsArray = _this2.props.items;
                 }
             });
 
-            var brandArray = [].concat(_toConsumableArray(new Set(this.props.items.map(function (item) {
+            /**
+             * @param {array} categoryArray Contains unique values for categories.
+             * @param {array} brandArray Contains unique values for brands.
+             */
+            var brandArray = ['Select brand'].concat(_toConsumableArray(new Set(this.props.items.map(function (item) {
                 return item.brand;
             })))),
-                categoryArray = [].concat(_toConsumableArray(new Set(this.props.items.map(function (item) {
+                categoryArray = ['Select category'].concat(_toConsumableArray(new Set(this.props.items.map(function (item) {
                 return item.category;
             }))));
 
@@ -19062,12 +19095,11 @@ var FilterContainer = function (_Component) {
                 { className: 'main-container' },
                 _react2.default.createElement(_searchers2.default, {
                     items: this.state.allItems,
-                    searchbar: this.state.searchbar,
                     brandArray: brandArray,
                     categoryArray: categoryArray,
-                    changeSearchingType: this.filterAllItems
+                    changeSearchingType: this.filterAllItems.bind(this)
                 }),
-                _react2.default.createElement(_list2.default, { items: itemsArray })
+                _react2.default.createElement(_list2.default, { items: itemsArray, loading: this.props.loading })
             );
         }
     }]);
@@ -19102,16 +19134,35 @@ var _list_item2 = _interopRequireDefault(_list_item);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @componentName List
+ * @description Returns list of items.
+ * @param {array} items Allows to pass data to lower level component.
+ * @param {boolean} loading Checks if data is already loaded.
+ */
 var List = function List(_ref) {
-    var items = _ref.items;
+    var items = _ref.items,
+        loading = _ref.loading;
 
-    return _react2.default.createElement(
-        'ul',
-        { className: 'all-items' },
-        items.map(function (item) {
-            return _react2.default.createElement(_list_item2.default, { item: item, key: item.id });
-        })
-    );
+    if (!loading) {
+        if (items.length == 0) {
+            return _react2.default.createElement(
+                'div',
+                { className: 'no-item' },
+                'Upsss... looks like we do not have this item, please try again.'
+            );
+        } else {
+            return _react2.default.createElement(
+                'ul',
+                { className: 'all-items' },
+                items.map(function (item) {
+                    return _react2.default.createElement(_list_item2.default, { item: item, key: item.id });
+                })
+            );
+        }
+    } else {
+        return _react2.default.createElement('div', { className: 'loader' });
+    }
 };
 
 exports.default = List;
@@ -19133,6 +19184,11 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @componentName ListItem
+ * @description Creates single element content.
+ * @param {object} item Single item data.
+ */
 var ListItem = function ListItem(_ref) {
     var item = _ref.item;
 
@@ -19221,27 +19277,34 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * @componentName Searchers
+ * @description Returns all filters types, include method needed to pass data.
+ */
 var Searchers = function (_Component) {
     _inherits(Searchers, _Component);
 
+    /**
+     * @param {array} props All props get from <FilterContainer />
+     */
     function Searchers(props) {
         _classCallCheck(this, Searchers);
 
-        var _this = _possibleConstructorReturn(this, (Searchers.__proto__ || Object.getPrototypeOf(Searchers)).call(this, props));
-
-        _this.state = {
-            searchbar: '',
-            brand: '',
-            category: ''
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Searchers.__proto__ || Object.getPrototypeOf(Searchers)).call(this, props));
     }
+
+    /**
+     * 
+     * @param {string} searchingType Contains chosen type of search ['searchbar', 'brand', 'category'].
+     * @param event Allows event handling.
+     */
+
 
     _createClass(Searchers, [{
         key: 'changeSearchingType',
-        value: function changeSearchingType(e, searchingType) {
-            var val = e.target.value;
-            this.props.changeSearchingType(val, searchingType);
+        value: function changeSearchingType(searchingType, event) {
+            var searchVal = event.target.value;
+            this.props.changeSearchingType(searchingType, searchVal);
         }
     }, {
         key: 'render',
@@ -19252,8 +19315,8 @@ var Searchers = function (_Component) {
                 _react2.default.createElement('input', {
                     type: 'text',
                     id: 'searchbar',
-                    value: this.state.searchbar,
-                    onChange: this.changeSearchingType.bind(this, 'searchbar'),
+                    value: this.props.searchbar,
+                    onChange: this.changeSearchingType.bind(this, 'name'),
                     className: 'filters-container__searchbar',
                     placeholder: 'Search...'
                 }),
@@ -19262,7 +19325,7 @@ var Searchers = function (_Component) {
                     {
                         id: 'brand',
                         className: 'filters-container__brands',
-                        value: this.props.items.brand,
+                        value: this.props.brand,
                         onChange: this.changeSearchingType.bind(this, 'brand')
                     },
                     this.props.brandArray.map(function (item, index) {
@@ -19279,7 +19342,7 @@ var Searchers = function (_Component) {
                     'select',
                     { className: 'filters-container__categories',
                         id: 'category',
-                        value: this.state.category,
+                        value: this.props.category,
                         onChange: this.changeSearchingType.bind(this, 'category')
                     },
                     this.props.categoryArray.map(function (item, index) {
