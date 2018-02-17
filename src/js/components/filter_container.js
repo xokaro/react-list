@@ -59,7 +59,8 @@ class FilterContainer extends Component{
 
     render(){
         let arr = ['name', 'brand', 'category'],
-            itemsArray = this.props.items;
+            itemsArray = this.props.items,
+            check = false;
 
         arr.map((filtered) => {
             let filterBy = this.state[filtered];
@@ -74,9 +75,14 @@ class FilterContainer extends Component{
                 && (this.state.brand == 'Select brand' || this.state.brand == undefined) 
                 && (this.state.category == 'Select category'  || this.state.category == undefined) 
             ){
-                itemsArray = this.props.items;
+                check = true;
             }
         })
+
+        if(check) {
+            itemsArray = this.state.allItems;
+            check = false;
+        }
 
         /**
          * @param {array} categoryArray Contains unique values for categories.
