@@ -45,7 +45,7 @@ class App extends Component {
             ) 
     }
 
-    render(){
+    render(){   
         return (
             <FilterContainer items={this.state.items} loading={this.state.isLoading} />
         )

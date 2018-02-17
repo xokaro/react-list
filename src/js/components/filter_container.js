@@ -73,7 +73,7 @@ class FilterContainer extends Component{
             else if( 
                 (this.state.name == '' || this.state.name == undefined) 
                 && (this.state.brand == 'Select brand' || this.state.brand == undefined) 
-                && (this.state.category == 'Select category'  || this.state.category == undefined) 
+                && (this.state.category == 'Select category'  || this.state.category == undefined)    
             ){
                 check = true;
             }
