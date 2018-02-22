@@ -19071,7 +19071,6 @@ var FilterContainer = function (_Component) {
             arr.map(function (filtered) {
                 var filterBy = _this2.state[filtered];
 
-                console.log(filterBy);
                 if (filterBy != undefined && filterBy != 'Select category' && filterBy != 'Select brand' && filterBy != '') {
                     itemsArray = itemsArray.filter(function (item) {
                         return item[filtered].toLowerCase().indexOf(filterBy.toLowerCase()) !== -1;
@@ -19080,12 +19079,6 @@ var FilterContainer = function (_Component) {
                     check = true;
                 }
             });
-
-            console.log('name    ' + (this.state.name == '' || this.state.name == undefined));
-            console.log('brand     ' + (this.state.brand == 'Select brand' || this.state.brand == undefined));
-            console.log('category   ' + (this.state.category == 'Select category' || this.state.category == undefined));
-            console.log('check   ' + check);
-            console.log('calosc    ' + ((this.state.name == '' || this.state.name == undefined) && (this.state.brand == 'Select brand' || this.state.brand == undefined) && (this.state.category == 'Select category' || this.state.category == undefined)));
 
             if (check) {
                 itemsArray = this.props.items;
