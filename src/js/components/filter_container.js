@@ -65,7 +65,7 @@ class FilterContainer extends Component{
         arr.map((filtered) => {
             let filterBy = this.state[filtered];
 
-            if(filterBy != undefined) {
+            if(filterBy != undefined && filterBy != 'Select category' && filterBy != 'Select brand' && filterBy != '') {
                 itemsArray = itemsArray.filter((item) => {
                     return item[filtered].toLowerCase().indexOf(filterBy.toLowerCase()) !== -1;
                 })
