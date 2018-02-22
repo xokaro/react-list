@@ -19065,19 +19065,32 @@ var FilterContainer = function (_Component) {
             var _this2 = this;
 
             var arr = ['name', 'brand', 'category'],
-                itemsArray = this.props.items;
+                itemsArray = this.props.items,
+                check = false;
 
             arr.map(function (filtered) {
                 var filterBy = _this2.state[filtered];
 
-                if (filterBy != undefined) {
+                console.log(filterBy);
+                if (filterBy != undefined && filterBy != 'Select category' && filterBy != 'Select brand' && filterBy != '') {
                     itemsArray = itemsArray.filter(function (item) {
                         return item[filtered].toLowerCase().indexOf(filterBy.toLowerCase()) !== -1;
                     });
                 } else if ((_this2.state.name == '' || _this2.state.name == undefined) && (_this2.state.brand == 'Select brand' || _this2.state.brand == undefined) && (_this2.state.category == 'Select category' || _this2.state.category == undefined)) {
-                    itemsArray = _this2.props.items;
+                    check = true;
                 }
             });
+
+            console.log('name    ' + (this.state.name == '' || this.state.name == undefined));
+            console.log('brand     ' + (this.state.brand == 'Select brand' || this.state.brand == undefined));
+            console.log('category   ' + (this.state.category == 'Select category' || this.state.category == undefined));
+            console.log('check   ' + check);
+            console.log('calosc    ' + ((this.state.name == '' || this.state.name == undefined) && (this.state.brand == 'Select brand' || this.state.brand == undefined) && (this.state.category == 'Select category' || this.state.category == undefined)));
+
+            if (check) {
+                itemsArray = this.props.items;
+                check = false;
+            }
 
             /**
              * @param {array} categoryArray Contains unique values for categories.
